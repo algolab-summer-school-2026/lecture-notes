@@ -1,0 +1,344 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// SCHEDULE DATA  —  2026 AlgoLab Summer School
+// - affiliation: speaker's institution
+// - scholarUrl:  Google Scholar profile URL (null = link not shown)
+// - url: null    → shows a greyed-out "not available" button on the site
+// ─────────────────────────────────────────────────────────────────────────────
+
+const SCHEDULE = [
+
+  // ── WEEK 1 ──────────────────────────────────────────────────────────────────
+
+  {
+    week: "Week 1",
+    dayName: "Monday",
+    date: "June 8, 2026",
+    lectures: [
+      {
+        title: "Lecture — Morning Session",
+        speaker: "Adam Bene Watts",
+        affiliation: "University of Calgary",
+        scholarUrl: "https://scholar.google.com/citations?user=nXVtEQ0AAAAJ&hl=en",
+        time: "09:00 – 12:30",
+        type: "Lecture",
+        tags: ["Quantum Information", "Quantum Complexity"],
+        materials: [
+          { label: "Slides", type: "slides", url: null },
+          { label: "Notes",  type: "notes",  url: null },
+        ],
+      },
+      {
+        title: "Lecture — Afternoon Session",
+        speaker: "Arthur Mehta",
+        affiliation: "University of Ottawa",
+        scholarUrl: "https://scholar.google.com/citations?user=6VCIcoAAAAAJ&hl=en",
+        time: "14:30 – 18:00",
+        type: "Lecture",
+        tags: ["Quantum Information", "Quantum Complexity"],
+        materials: [
+          { label: "Slides", type: "slides", url: null },
+          { label: "Notes",  type: "notes",  url: null },
+        ],
+      },
+    ],
+  },
+
+  {
+    week: "Week 1",
+    dayName: "Tuesday",
+    date: "June 9, 2026",
+    lectures: [
+      {
+        title: "AlgoLab Hands-on",
+        speaker: "AlgoLab Team",
+        affiliation: "Université de Sherbrooke",
+        scholarUrl: null,
+        time: "09:00 – 12:30",
+        type: "Hands-on",
+        tags: ["Quantum Information", "Quantum Complexity"],
+        materials: [
+          { label: "Notebook", type: "notes", url: null },
+        ],
+      },
+      {
+        title: "Poster Session 1 / Industry Exhibition / Cocktail",
+        speaker: "All Participants",
+        affiliation: "",
+        scholarUrl: null,
+        time: "14:30 – 17:30",
+        type: "Poster Session",
+        materials: [],
+      },
+    ],
+  },
+
+  {
+    week: "Week 1",
+    dayName: "Wednesday",
+    date: "June 10, 2026",
+    lectures: [
+      {
+        title: "Lecture — Morning Session",
+        speaker: "Roeland Wiersema",
+        affiliation: "Flatiron Institute",
+        scholarUrl: "https://scholar.google.com/citations?user=OK_B1GYAAAAJ&hl=en",
+        time: "09:00 – 12:30",
+        type: "Lecture",
+        tags: ["Quantum Algorithm Applications"],
+        materials: [
+          { label: "Slides", type: "slides", url: null },
+          { label: "Notes",  type: "notes",  url: null },
+        ],
+      },
+      {
+        title: "Lecture — Afternoon Session",
+        speaker: "Abhijeet Alase",
+        affiliation: "Concordia University",
+        scholarUrl: "https://scholar.google.com/citations?user=3CjMS4EAAAAJ&hl=en",
+        time: "14:30 – 18:00",
+        type: "Lecture",
+        tags: ["Quantum Algorithm Applications"],
+        materials: [
+          { label: "Slides", type: "slides", url: null },
+          { label: "Notes",  type: "notes",  url: null },
+        ],
+      },
+    ],
+  },
+
+  {
+    week: "Week 1",
+    dayName: "Thursday",
+    date: "June 11, 2026",
+    lectures: [
+      {
+        title: "Lecture — Morning Session",
+        speaker: "Ulrike Stege",
+        affiliation: "University of Victoria",
+        scholarUrl: "https://scholar.google.com/citations?user=1Zp5jw8AAAAJ&hl=en",
+        time: "09:00 – 12:30",
+        type: "Lecture",
+        tags: ["Quantum Algorithm Applications"],
+        materials: [
+          { label: "Slides", type: "slides", url: null },
+          { label: "Notes",  type: "notes",  url: null },
+        ],
+      },
+      {
+        title: "AlgoLab Hands-on",
+        speaker: "AlgoLab Team",
+        affiliation: "Université de Sherbrooke",
+        scholarUrl: null,
+        time: "14:30 – 18:00",
+        type: "Hands-on",
+        tags: ["Quantum Algorithm Applications"],
+        materials: [
+          { label: "Notebook", type: "notes", url: null },
+        ],
+      },
+    ],
+  },
+
+  {
+    week: "Week 1",
+    dayName: "Friday",
+    date: "June 12, 2026",
+    lectures: [
+      {
+        title: "Sponsored Session",
+        speaker: "Industry Speakers",
+        affiliation: "",
+        scholarUrl: null,
+        time: "09:00 – 09:45",
+        type: "Sponsored",
+        materials: [],
+      },
+      {
+        title: "Revision Session",
+        speaker: "AlgoLab Team",
+        affiliation: "Université de Sherbrooke",
+        scholarUrl: null,
+        time: "10:30 – 12:30",
+        type: "Revision",
+        materials: [],
+      },
+    ],
+  },
+
+  // ── WEEK 2 ──────────────────────────────────────────────────────────────────
+
+  {
+    week: "Week 2",
+    dayName: "Monday",
+    date: "June 15, 2026",
+    lectures: [
+      {
+        title: "Lecture — Morning Session",
+        speaker: "Chloé Gauvin-Ndiaye",
+        affiliation: "Université de Sherbrooke",
+        scholarUrl: "https://scholar.google.com/citations?user=Of9XACAAAAAJ&hl=en",
+        time: "09:00 – 12:30",
+        type: "Lecture",
+        tags: ["Quantum Computation"],
+        materials: [
+          { label: "Slides", type: "slides", url: null },
+          { label: "Notes",  type: "notes",  url: null },
+        ],
+      },
+      {
+        title: "Lecture — Afternoon Session",
+        speaker: "Olivia Di Matteo",
+        affiliation: "The University of British Columbia",
+        scholarUrl: "https://scholar.google.com/citations?user=neFhvlsAAAAJ&hl=en",
+        time: "14:30 – 18:00",
+        type: "Lecture",
+        tags: ["Quantum Computation"],
+        materials: [
+          { label: "Slides", type: "slides", url: null },
+          { label: "Notes",  type: "notes",  url: null },
+        ],
+      },
+    ],
+  },
+
+  {
+    week: "Week 2",
+    dayName: "Tuesday",
+    date: "June 16, 2026",
+    lectures: [
+      {
+        title: "AlgoLab Hands-on",
+        speaker: "AlgoLab Team",
+        affiliation: "Université de Sherbrooke",
+        scholarUrl: null,
+        time: "09:00 – 12:30",
+        type: "Hands-on",
+        tags: ["Quantum Computation"],
+        materials: [
+          { label: "Notebook", type: "notes", url: null },
+        ],
+      },
+      {
+        title: "Lecture — Afternoon Session",
+        speaker: "Konstantinos Meichanetzidis",
+        affiliation: "Quantinuum",
+        scholarUrl: "https://scholar.google.com/citations?user=IH9fJM0AAAAJ&hl=en",
+        time: "14:30 – 18:00",
+        type: "Lecture",
+        tags: ["To Be Determined"],
+        materials: [
+          { label: "Slides", type: "slides", url: null },
+          { label: "Notes",  type: "notes",  url: null },
+        ],
+      },
+    ],
+  },
+
+  {
+    week: "Week 2",
+    dayName: "Wednesday",
+    date: "June 17, 2026",
+    lectures: [
+      {
+        title: "Lecture — Morning Session",
+        speaker: "Sisi Zhou",
+        affiliation: "Perimeter Institute",
+        scholarUrl: "https://scholar.google.com/citations?user=i-m2j4oAAAAJ&hl=en",
+        time: "09:00 – 12:30",
+        type: "Lecture",
+        tags: ["Quantum Error Handling"],
+        materials: [
+          { label: "Slides", type: "slides", url: null },
+          { label: "Notes",  type: "notes",  url: null },
+        ],
+      },
+      {
+        title: "Lecture — Afternoon Session",
+        speaker: "Shruti Puri",
+        affiliation: "Yale University",
+        scholarUrl: "https://scholar.google.com/citations?user=q7U4bNoAAAAJ&hl=en",
+        time: "14:30 – 18:00",
+        type: "Lecture",
+        tags: ["Quantum Error Handling"],
+        materials: [
+          { label: "Slides", type: "slides", url: null },
+          { label: "Notes",  type: "notes",  url: null },
+        ],
+      },
+      {
+        title: "Poster Session 2",
+        speaker: "All Participants",
+        affiliation: "",
+        scholarUrl: null,
+        time: "19:00 – 21:00",
+        type: "Poster Session",
+        materials: [],
+      },
+    ],
+  },
+
+  {
+    week: "Week 2",
+    dayName: "Thursday",
+    date: "June 18, 2026",
+    lectures: [
+      {
+        title: "AlgoLab Hands-on",
+        speaker: "AlgoLab Team",
+        affiliation: "Université de Sherbrooke",
+        scholarUrl: null,
+        time: "09:00 – 12:30",
+        type: "Hands-on",
+        tags: ["Quantum Error Handling"],
+        materials: [
+          { label: "Notebook", type: "notes", url: null },
+        ],
+      },
+      {
+        title: "Sponsored Session",
+        speaker: "Industry Speaker",
+        affiliation: "",
+        scholarUrl: null,
+        time: "14:30 – 15:15",
+        type: "Sponsored",
+        materials: [],
+      },
+      {
+        title: "Revision Session",
+        speaker: "AlgoLab Team",
+        affiliation: "Université de Sherbrooke",
+        scholarUrl: null,
+        time: "16:00 – 18:00",
+        type: "Revision",
+        materials: [],
+      },
+    ],
+  },
+
+  {
+    week: "Week 2",
+    dayName: "Friday",
+    date: "June 19, 2026",
+    lectures: [
+      {
+        title: "Exam",
+        speaker: "AlgoLab Team",
+        affiliation: "Université de Sherbrooke",
+        scholarUrl: null,
+        time: "09:00 – 12:30",
+        type: "Exam",
+        materials: [],
+      },
+      {
+        title: "Concluding Remarks",
+        speaker: "AlgoLab Team",
+        affiliation: "Université de Sherbrooke",
+        scholarUrl: null,
+        time: "12:30 – 13:30",
+        type: "Event",
+        materials: [],
+      },
+    ],
+  },
+
+];

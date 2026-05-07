@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AlgoLab Summer School on Quantum Algorithms</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #cdd5d8;
+      --surface: #e8edf0;
+      --surface-2: #dce3e7;
+      --border: #bcc8ce;
+      --border-hover: #92a8b0;
+      --accent: #16a34a;
+      --accent-light: #15803d;
+      --accent-glow: rgba(22, 163, 74, 0.08);
+      --teal: #166534;
+      --teal-glow: rgba(22, 101, 52, 0.08);
+      --text: #0f172a;
+      --text-muted: #475569;
+      --text-faint: #94a3b8;
+      --green: #15803d;
+      --orange: #b45309;
+      --red: #b91c1c;
+      --radius: 10px;
+      --radius-lg: 14px;
+      --shadow-sm: 0 1px 3px rgba(15,23,42,0.08), 0 1px 2px rgba(15,23,42,0.04);
+      --shadow-md: 0 4px 16px rgba(15,23,42,0.10), 0 2px 6px rgba(15,23,42,0.06);
+    }
+
+    html { scroll-behavior: smooth; font-size: 23px; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .nav-brand {
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .nav-brand .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--accent-light);
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 5.5rem 2rem 4.5rem;
+      text-align: center;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 55% at 50% -5%, rgba(22, 163, 74, 0.12) 0%, transparent 65%),
+        radial-gradient(ellipse 35% 30% at 85% 70%, rgba(22, 101, 52, 0.07) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(22,163,74,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(22,163,74,0.07) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, black 0%, transparent 75%);
+    }
+    .hero-banner-img {
+      position: relative;
+      width: 100%;
+      max-width: 960px;
+      margin: 2.5rem auto 0;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+      aspect-ratio: 16 / 5;
+      background: linear-gradient(135deg, #c0d9c8 0%, #aeceba 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-banner-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-banner-placeholder {
+      color: var(--text-faint);
+      font-size: 0.82rem;
+      font-weight: 500;
+      text-align: center;
+      padding: 1rem;
+    }
+    .hero-inner { position: relative; max-width: 960px; margin: 0 auto; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(22, 163, 74, 0.09);
+      border: 1px solid rgba(22, 163, 74, 0.22);
+      border-radius: 999px;
+      padding: 0.25rem 0.9rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent-light);
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      margin-bottom: 1.5rem;
+    }
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.13;
+      margin-bottom: 1.2rem;
+      color: var(--text);
+    }
+    h1 span {
+      background: linear-gradient(135deg, #16a34a 0%, #0891b2 50%, #6366f1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      white-space: nowrap;
+    }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 2rem;
+      font-weight: 400;
+    }
+    .hero-meta {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 2.25rem;
+    }
+    .hero-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+    .hero-meta-item .icon {
+      width: 16px; height: 16px;
+      color: var(--accent-light);
+    }
+    .hero-stats {
+      display: inline-flex;
+      gap: 0;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .stat {
+      text-align: center;
+      padding: 0.9rem 2rem;
+      border-right: 1px solid var(--border);
+    }
+    .stat:last-child { border-right: none; }
+    .stat-num {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: -0.03em;
+    }
+    .stat-label {
+      font-size: 0.72rem;
+      color: var(--text-faint);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      font-weight: 600;
+    }
+
+    /* ── SEARCH ── */
+    .search-bar {
+      max-width: 1400px;
+      margin: 2rem auto 0;
+      padding: 0 2rem;
+    }
+    .search-input-wrap { position: relative; }
+    .search-input-wrap svg {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-faint);
+      pointer-events: none;
+    }
+    #search {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0.75rem 1rem 0.75rem 2.75rem;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.95rem;
+      outline: none;
+      box-shadow: var(--shadow-sm);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    #search:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+    }
+    #search::placeholder { color: var(--text-faint); }
+
+    /* ── SCHEDULE ── */
+    .section {
+      max-width: 1400px;
+      margin: 2.5rem auto;
+      padding: 0 2rem;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+    }
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--text);
+    }
+    .week-tabs { display: flex; gap: 0.4rem; }
+    .tab-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0.4rem 1rem;
+      color: var(--text-muted);
+      font-family: inherit;
+      font-size: 0.83rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+      box-shadow: var(--shadow-sm);
+    }
+    .tab-btn:hover { border-color: var(--border-hover); color: var(--text); }
+    .tab-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(22,163,74,0.30);
+    }
+
+    /* ── DAY GROUP ── */
+    .day-group { margin-bottom: 2.25rem; }
+    .day-header {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      margin-bottom: 0.9rem;
+    }
+    .day-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+    .day-date {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .day-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── LECTURE CARD ── */
+    .lecture-card {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 1.25rem;
+      align-items: start;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 0.6rem;
+      box-shadow: var(--shadow-sm);
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+      cursor: default;
+    }
+    .lecture-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-1px);
+    }
+    .lecture-card.hidden { display: none; }
+
+    .lecture-time {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      padding-top: 3px;
+      min-width: 82px;
+      font-weight: 600;
+    }
+
+    .lecture-body { min-width: 0; }
+    .lecture-title {
+      font-size: 0.975rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+      line-height: 1.45;
+    }
+    .lecture-speaker {
+      font-size: 0.86rem;
+      color: var(--accent-light);
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+    .lecture-affil {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 0.55rem;
+    }
+    .lecture-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+    .tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.18rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid;
+    }
+    .tag-topic {
+      background: rgba(22, 101, 52, 0.08);
+      border-color: rgba(22, 101, 52, 0.22);
+      color: var(--teal);
+    }
+    .tag-type {
+      background: rgba(180, 83, 9, 0.07);
+      border-color: rgba(180, 83, 9, 0.2);
+      color: var(--orange);
+    }
+
+    .lecture-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      align-items: flex-end;
+      flex-shrink: 0;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.15s;
+      border: 1px solid;
+      white-space: nowrap;
+    }
+    .btn-slides {
+      background: rgba(22, 163, 74, 0.07);
+      border-color: rgba(22, 163, 74, 0.25);
+      color: var(--accent);
+    }
+    .btn-slides:hover {
+      background: rgba(22, 163, 74, 0.14);
+      border-color: rgba(22, 163, 74, 0.45);
+    }
+    .btn-notes {
+      background: rgba(22, 101, 52, 0.07);
+      border-color: rgba(22, 101, 52, 0.22);
+      color: var(--teal);
+    }
+    .btn-notes:hover {
+      background: rgba(22, 101, 52, 0.13);
+      border-color: rgba(22, 101, 52, 0.38);
+    }
+    .btn-video {
+      background: rgba(185, 28, 28, 0.06);
+      border-color: rgba(185, 28, 28, 0.2);
+      color: var(--red);
+    }
+    .btn-video:hover {
+      background: rgba(185, 28, 28, 0.11);
+    }
+    .btn-na {
+      background: transparent;
+      border-color: var(--border);
+      color: var(--text-faint);
+      cursor: not-allowed;
+      opacity: 0.55;
+    }
+
+    /* ── INFO BANNER ── */
+    .info-banner {
+      max-width: 1400px;
+      margin: 0 auto 2rem;
+      padding: 0 2rem;
+    }
+    .info-card {
+      background: rgba(22, 163, 74, 0.05);
+      border: 1px solid rgba(22, 163, 74, 0.18);
+      border-left: 3px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 0.9rem 1.2rem;
+      font-size: 0.865rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .info-card svg { flex-shrink: 0; color: var(--accent-light); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 4rem;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--text-faint);
+      background: var(--surface);
+    }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--text); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .lecture-card { grid-template-columns: 1fr; gap: 0.75rem; }
+      .lecture-time { display: none; }
+      .lecture-actions { flex-direction: row; flex-wrap: wrap; align-items: flex-start; }
+      .hero-stats { width: 100%; }
+      .stat { padding: 0.8rem 1rem; flex: 1; }
+      .section-header { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+      .nav-links { display: none; }
+    }
+
+    .scholar-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      opacity: 0.75;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+      transition: opacity 0.15s;
+    }
+    .scholar-link:hover { opacity: 1; }
+
+    .no-results {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--text-faint);
+      font-size: 0.95rem;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="#">
+      <span class="dot"></span>
+      AlgoLab Summer School
+    </a>
+    <ul class="nav-links">
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><circle cx="5" cy="5" r="5"/></svg>
+      Lecture Notes Archive
+    </div>
+    <h1>AlgoLab Summer School on<br><span>Fault-Tolerant Quantum Computing</span></h1>
+    <p class="hero-sub">
+      A curated archive of slides, notes, and recordings from leading researchers in fault-tolerant quantum computing.
+    </p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <span>June 8 – 19, 2026</span>
+      </div>
+      <div class="hero-meta-item">
+        <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        <span>Université de Sherbrooke</span>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num" id="stat-lectures">—</div>
+        <div class="stat-label">Lectures</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" id="stat-speakers">—</div>
+        <div class="stat-label">Speakers</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" id="stat-days">—</div>
+        <div class="stat-label">Days</div>
+      </div>
+    </div>
+    <!-- ↓ Replace src with your banner image path, e.g. src="images/banner.jpg" -->
+    <div class="hero-banner-img">
+      <img src="images/bishops-university.jpg" alt="Summer school banner"
+    </div>
+  </div>
+</section>
+
+<!-- SEARCH -->
+<div class="search-bar">
+  <div class="search-input-wrap">
+    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </svg>
+    <input type="text" id="search" placeholder="Search lectures, speakers, or topics…" />
+  </div>
+</div>
+
+<!-- SCHEDULE -->
+<section class="section" id="schedule">
+  <div class="section-header">
+    <h2 class="section-title">Schedule</h2>
+    <div class="week-tabs" id="week-tabs"></div>
+  </div>
+  <div id="schedule-content"></div>
+  <p class="no-results" id="no-results">No lectures match your search.</p>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="section-header">
+    <h2 class="section-title">About</h2>
+  </div>
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;color:var(--text-muted);line-height:1.8;font-size:0.95rem;box-shadow:var(--shadow-sm)">
+    <p style="margin-bottom:1rem">
+      The AlgoLab Summer School on Fault-Tolerant Quantum Computing brings together students, postdocs,
+      and researchers for an intensive program of lectures on the latest developments in
+      fault-tolerant quantum computing. 
+      For more information about the Summer School, please visit the
+      <a href="https://www.usherbrooke.ca/ecoles-de-pointe/en/physics/2026-algolab-summer-school-towards-fault-tolerant-quantum-computing" style="color:var(--accent-light);text-decoration:none">official website</a>.
+    </p>
+    <p style="margin-bottom:1rem">
+      This page archives all publicly available lecture materials including slides, handwritten notes,
+      and video recordings. Materials marked as unavailable were not cleared for public release
+      by the speaker.
+    </p>
+    <p>
+      For questions about the school, contact
+      <a href="mailto:ecole.iq@usherbrooke.ca" style="color:var(--accent-light);text-decoration:none">ecole.iq@usherbrooke.ca</a>.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <p>AlgoLab Summer School on Fault Quantum Computing &nbsp;·&nbsp; Université de Sherbrooke</p>
+  <p style="margin-top:0.4rem"><a href="https://github.com/algolab-iq/lecture-notes">GitHub</a></p>
+  <p style="margin-top:0.75rem;font-size:0.78rem;color:var(--text-faint)">
+    Made with <a href="https://claude.ai" style="color:var(--text-faint)">Claude</a> &nbsp;·&nbsp; Anthropic
+  </p>
+</footer>
+
+<!-- DATA + JS -->
+<script src="data.js"></script>
+<script>
+  // ── Render ──────────────────────────────────────────────────────────────────
+  const scheduleEl  = document.getElementById('schedule-content');
+  const weekTabsEl  = document.getElementById('week-tabs');
+  const searchEl    = document.getElementById('search');
+  const noResults   = document.getElementById('no-results');
+
+  let activeWeek = null;
+
+  function materialBtn(mat) {
+    if (!mat || mat.url === null) {
+      return `<span class="btn btn-na">${mat ? mat.label : 'N/A'}</span>`;
+    }
+    const cls = mat.type === 'slides' ? 'btn-slides'
+              : mat.type === 'notes'  ? 'btn-notes'
+              : mat.type === 'video'  ? 'btn-video'
+              : 'btn-slides';
+    const icon = mat.type === 'slides'
+      ? `<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8 21 12 17 16 21"/></svg>`
+      : mat.type === 'notes'
+      ? `<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>`
+      : `<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>`;
+    return `<a class="btn ${cls}" href="${mat.url}" target="_blank" rel="noopener">${icon} ${mat.label}</a>`;
+  }
+
+  function renderSchedule(query) {
+    const q = (query || '').toLowerCase();
+    scheduleEl.innerHTML = '';
+    let totalVisible = 0;
+
+    const days = activeWeek
+      ? SCHEDULE.filter(d => d.week === activeWeek)
+      : SCHEDULE;
+
+    days.forEach(day => {
+      const lectures = day.lectures.filter(l => {
+        if (!q) return true;
+        return l.title.toLowerCase().includes(q)
+          || l.speaker.toLowerCase().includes(q)
+          || (l.affiliation||'').toLowerCase().includes(q)
+          || (l.tags||[]).some(t => t.toLowerCase().includes(q));
+      });
+      totalVisible += lectures.length;
+
+      const group = document.createElement('div');
+      group.className = 'day-group';
+      group.innerHTML = `
+        <div class="day-header">
+          <span class="day-label">${day.dayName}</span>
+          <span class="day-date">${day.date}</span>
+          <div class="day-line"></div>
+        </div>`;
+
+      lectures.forEach(l => {
+        const card = document.createElement('div');
+        card.className = 'lecture-card';
+        const tags = (l.tags||[]).map(t => `<span class="tag tag-topic">${t}</span>`).join('');
+        const typeTag = l.type ? `<span class="tag tag-type">${l.type}</span>` : '';
+        const mats = (l.materials||[]).map(materialBtn).join('');
+        const scholarBtn = l.scholarUrl
+          ? `<a class="scholar-link" href="${l.scholarUrl}" target="_blank" rel="noopener">
+               <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+               Google Scholar
+             </a>`
+          : '';
+
+        card.innerHTML = `
+          <div class="lecture-time">${l.time || ''}</div>
+          <div class="lecture-body">
+            <div class="lecture-title">${l.title}</div>
+            <div class="lecture-speaker">${l.speaker}${scholarBtn}</div>
+            <div class="lecture-affil">${l.affiliation || ''}</div>
+            <div class="lecture-tags">${tags}${typeTag}</div>
+          </div>
+          <div class="lecture-actions">${mats}</div>`;
+        group.appendChild(card);
+      });
+
+      if (lectures.length > 0) scheduleEl.appendChild(group);
+    });
+
+    noResults.style.display = totalVisible === 0 ? 'block' : 'none';
+  }
+
+  function renderWeekTabs() {
+    const weeks = [...new Set(SCHEDULE.map(d => d.week))];
+    weekTabsEl.innerHTML = '';
+    const allBtn = document.createElement('button');
+    allBtn.className = 'tab-btn' + (!activeWeek ? ' active' : '');
+    allBtn.textContent = 'All';
+    allBtn.onclick = () => { activeWeek = null; renderWeekTabs(); renderSchedule(searchEl.value); };
+    weekTabsEl.appendChild(allBtn);
+    weeks.forEach(w => {
+      const btn = document.createElement('button');
+      btn.className = 'tab-btn' + (w === activeWeek ? ' active' : '');
+      btn.textContent = w;
+      btn.onclick = () => {
+        activeWeek = (activeWeek === w) ? null : w;
+        renderWeekTabs();
+        renderSchedule(searchEl.value);
+      };
+      weekTabsEl.appendChild(btn);
+    });
+  }
+
+  function updateStats() {
+    const allLectures = SCHEDULE.flatMap(d => d.lectures);
+    const uniqueSpeakers = new Set(allLectures.map(l => l.speaker)).size;
+    document.getElementById('stat-lectures').textContent = allLectures.length;
+    document.getElementById('stat-speakers').textContent = uniqueSpeakers;
+    document.getElementById('stat-days').textContent = SCHEDULE.length;
+  }
+
+  // ── Init ────────────────────────────────────────────────────────────────────
+  renderWeekTabs();
+  renderSchedule();
+  updateStats();
+
+  searchEl.addEventListener('input', () => renderSchedule(searchEl.value));
+</script>
+
+</body>
+</html>
