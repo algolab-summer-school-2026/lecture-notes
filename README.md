@@ -54,7 +54,7 @@ Place your image in the repo (e.g. `images/banner.jpg`) and set the `src` attrib
 
 1. Push this repo to GitHub.
 2. Go to **Settings → Pages → Source**: branch `main`, folder `/` (root).
-3. The site will be live at `https://<org>.github.io/<repo>/`.
+3. The site will be live at `https://algolab-summer-school-2026.github.io/lecture-notes/`.
 
 ## Files
 
