@@ -15,7 +15,10 @@ const SCHEDULE = [
     date: "June 8, 2026",
     lectures: [
       {
-        title: "Lecture — Morning Session",
+        title: [
+          "Part 1 - Introduction to Fault-Tolerant Quantum Circuits",
+          "Part 2 - Hamiltonians and Nonlocal Games",
+        ],
         speaker: "Adam Bene Watts",
         affiliation: "University of Calgary",
         scholarUrl: "https://scholar.google.com/citations?user=nXVtEQ0AAAAJ&hl=en",
@@ -24,11 +27,10 @@ const SCHEDULE = [
         tags: ["Quantum Information", "Quantum Complexity"],
         materials: [
           { label: "Slides", type: "slides", url: null },
-          { label: "Notes",  type: "notes",  url: null },
         ],
       },
       {
-        title: "Lecture — Afternoon Session",
+        title: ["Part 1 - Introduction to Complexity Theory", "Part 2 - Interactive Proofs, Bell Tests, and Verified Quantum Computation"],
         speaker: "Arthur Mehta",
         affiliation: "University of Ottawa",
         scholarUrl: "https://scholar.google.com/citations?user=6VCIcoAAAAAJ&hl=en",
@@ -37,7 +39,6 @@ const SCHEDULE = [
         tags: ["Quantum Information", "Quantum Complexity"],
         materials: [
           { label: "Slides", type: "slides", url: null },
-          { label: "Notes",  type: "notes",  url: null },
         ],
       },
     ],
@@ -49,7 +50,7 @@ const SCHEDULE = [
     date: "June 9, 2026",
     lectures: [
       {
-        title: "AlgoLab Hands-on",
+        title: "Hands-on on Quantum Information",
         speaker: "AlgoLab Team",
         affiliation: "Université de Sherbrooke",
         scholarUrl: null,
@@ -78,7 +79,7 @@ const SCHEDULE = [
     date: "June 10, 2026",
     lectures: [
       {
-        title: "Lecture — Morning Session",
+        title: ["Part 1 - Variational Quantum Algorithms and their Place in the Fault-Tolerant Age", "Part 2 - Quantum Optimal Control"],
         speaker: "Roeland Wiersema",
         affiliation: "Flatiron Institute",
         scholarUrl: "https://scholar.google.com/citations?user=OK_B1GYAAAAJ&hl=en",
@@ -87,11 +88,10 @@ const SCHEDULE = [
         tags: ["Quantum Algorithm Applications"],
         materials: [
           { label: "Slides", type: "slides", url: null },
-          { label: "Notes",  type: "notes",  url: null },
         ],
       },
       {
-        title: "Lecture — Afternoon Session",
+        title: "Quantum Singular Value Transformation and its Applications",
         speaker: "Abhijeet Alase",
         affiliation: "Concordia University",
         scholarUrl: "https://scholar.google.com/citations?user=3CjMS4EAAAAJ&hl=en",
@@ -100,7 +100,6 @@ const SCHEDULE = [
         tags: ["Quantum Algorithm Applications"],
         materials: [
           { label: "Slides", type: "slides", url: null },
-          { label: "Notes",  type: "notes",  url: null },
         ],
       },
     ],
@@ -112,7 +111,7 @@ const SCHEDULE = [
     date: "June 11, 2026",
     lectures: [
       {
-        title: "Lecture — Morning Session",
+        title: "Solving Unconstrained and Constrained Combinatorial Optimization Problems using QAOA",
         speaker: "Ulrike Stege",
         affiliation: "University of Victoria",
         scholarUrl: "https://scholar.google.com/citations?user=1Zp5jw8AAAAJ&hl=en",
@@ -121,11 +120,10 @@ const SCHEDULE = [
         tags: ["Quantum Algorithm Applications"],
         materials: [
           { label: "Slides", type: "slides", url: null },
-          { label: "Notes",  type: "notes",  url: null },
         ],
       },
       {
-        title: "AlgoLab Hands-on",
+        title: "Hands-on on Quantum Applications",
         speaker: "AlgoLab Team",
         affiliation: "Université de Sherbrooke",
         scholarUrl: null,
@@ -173,7 +171,7 @@ const SCHEDULE = [
     date: "June 15, 2026",
     lectures: [
       {
-        title: "Lecture — Morning Session",
+        title: "Introduction to the Interacting Electrons Problem",
         speaker: "Chloé Gauvin-Ndiaye",
         affiliation: "Université de Sherbrooke",
         scholarUrl: "https://scholar.google.com/citations?user=Of9XACAAAAAJ&hl=en",
@@ -182,11 +180,10 @@ const SCHEDULE = [
         tags: ["Quantum Computation"],
         materials: [
           { label: "Slides", type: "slides", url: null },
-          { label: "Notes",  type: "notes",  url: null },
         ],
       },
       {
-        title: "Lecture — Afternoon Session",
+        title: "Introduction to Compilation and Resource Estimation",
         speaker: "Olivia Di Matteo",
         affiliation: "The University of British Columbia",
         scholarUrl: "https://scholar.google.com/citations?user=neFhvlsAAAAJ&hl=en",
@@ -195,7 +192,6 @@ const SCHEDULE = [
         tags: ["Quantum Computation"],
         materials: [
           { label: "Slides", type: "slides", url: null },
-          { label: "Notes",  type: "notes",  url: null },
         ],
       },
     ],
@@ -207,7 +203,7 @@ const SCHEDULE = [
     date: "June 16, 2026",
     lectures: [
       {
-        title: "AlgoLab Hands-on",
+        title: "Resource Estimation for the Hubbard Model",
         speaker: "AlgoLab Team",
         affiliation: "Université de Sherbrooke",
         scholarUrl: null,
@@ -219,7 +215,7 @@ const SCHEDULE = [
         ],
       },
       {
-        title: "Lecture — Afternoon Session",
+        title: "Title to come",
         speaker: "Konstantinos Meichanetzidis",
         affiliation: "Quantinuum",
         scholarUrl: "https://scholar.google.com/citations?user=IH9fJM0AAAAJ&hl=en",
@@ -228,7 +224,6 @@ const SCHEDULE = [
         tags: ["To Be Determined"],
         materials: [
           { label: "Slides", type: "slides", url: null },
-          { label: "Notes",  type: "notes",  url: null },
         ],
       },
     ],
@@ -240,7 +235,7 @@ const SCHEDULE = [
     date: "June 17, 2026",
     lectures: [
       {
-        title: "Lecture — Morning Session",
+        title: "Application of Quantum Error Correction and Fault-Tolerance in Quantum Metrology",
         speaker: "Sisi Zhou",
         affiliation: "Perimeter Institute",
         scholarUrl: "https://scholar.google.com/citations?user=i-m2j4oAAAAJ&hl=en",
@@ -249,11 +244,10 @@ const SCHEDULE = [
         tags: ["Quantum Error Handling"],
         materials: [
           { label: "Slides", type: "slides", url: null },
-          { label: "Notes",  type: "notes",  url: null },
         ],
       },
       {
-        title: "Lecture — Afternoon Session",
+        title: "Title to come",
         speaker: "Shruti Puri",
         affiliation: "Yale University",
         scholarUrl: "https://scholar.google.com/citations?user=q7U4bNoAAAAJ&hl=en",
@@ -262,7 +256,6 @@ const SCHEDULE = [
         tags: ["Quantum Error Handling"],
         materials: [
           { label: "Slides", type: "slides", url: null },
-          { label: "Notes",  type: "notes",  url: null },
         ],
       },
       {
@@ -283,7 +276,7 @@ const SCHEDULE = [
     date: "June 18, 2026",
     lectures: [
       {
-        title: "AlgoLab Hands-on",
+        title: "Introduction to Error Correction Codes",
         speaker: "AlgoLab Team",
         affiliation: "Université de Sherbrooke",
         scholarUrl: null,

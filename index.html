@@ -372,6 +372,15 @@
       margin-bottom: 0.25rem;
       line-height: 1.45;
     }
+    .lecture-part-row {
+      font-size: 0.975rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.45;
+      margin-bottom: 0.1rem;
+    }
+    .lecture-part-row:last-child { margin-bottom: 0; }
+
     .lecture-speaker {
       font-size: 0.86rem;
       color: var(--accent-light);
@@ -564,7 +573,7 @@
     </div>
     <h1>AlgoLab Summer School on<br><span>Fault-Tolerant Quantum Computing</span></h1>
     <p class="hero-sub">
-      A curated archive of slides, notes, and recordings from leading researchers in fault-tolerant quantum computing.
+      A curated archive of slides from leading researchers in fault-tolerant quantum computing.
     </p>
     <div class="hero-meta">
       <div class="hero-meta-item">
@@ -631,8 +640,7 @@
       <a href="https://www.usherbrooke.ca/ecoles-de-pointe/en/physics/2026-algolab-summer-school-towards-fault-tolerant-quantum-computing" style="color:var(--accent-light);text-decoration:none">official website</a>.
     </p>
     <p style="margin-bottom:1rem">
-      This page archives all publicly available lecture materials including slides, handwritten notes,
-      and video recordings. Materials marked as unavailable were not cleared for public release
+      This page archives all publicly available lecture materials. Materials marked as unavailable were not cleared for public release
       by the speaker.
     </p>
     <p>
@@ -689,7 +697,8 @@
     days.forEach(day => {
       const lectures = day.lectures.filter(l => {
         if (!q) return true;
-        return l.title.toLowerCase().includes(q)
+        const titles = Array.isArray(l.title) ? l.title : [l.title||''];
+        return titles.some(t => t.toLowerCase().includes(q))
           || l.speaker.toLowerCase().includes(q)
           || (l.affiliation||'').toLowerCase().includes(q)
           || (l.tags||[]).some(t => t.toLowerCase().includes(q));
@@ -718,10 +727,13 @@
              </a>`
           : '';
 
+        const titleHtml = Array.isArray(l.title)
+          ? `<div class="lecture-title">${l.title.map(t => `<div class="lecture-part-row">${t}</div>`).join('')}</div>`
+          : `<div class="lecture-title">${l.title}</div>`;
         card.innerHTML = `
           <div class="lecture-time">${l.time || ''}</div>
           <div class="lecture-body">
-            <div class="lecture-title">${l.title}</div>
+            ${titleHtml}
             <div class="lecture-speaker">${l.speaker}${scholarBtn}</div>
             <div class="lecture-affil">${l.affiliation || ''}</div>
             <div class="lecture-tags">${tags}${typeTag}</div>
