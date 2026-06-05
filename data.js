@@ -79,7 +79,7 @@ const SCHEDULE = [
     date: "June 10, 2026",
     lectures: [
       {
-        title: ["Part 1 - Variational Quantum Algorithms and their Place in the Fault-Tolerant Age", "Part 2 - Quantum Optimal Control"],
+        title: ["Part 1 - Variational Quantum Algorithms and their Place in the Fault-Tolerant Age", "Part 2 - Double Bracket Flows"],
         speaker: "Roeland Wiersema",
         affiliation: "Flatiron Institute",
         scholarUrl: "https://scholar.google.com/citations?user=OK_B1GYAAAAJ&hl=en",
@@ -247,7 +247,7 @@ const SCHEDULE = [
         ],
       },
       {
-        title: "Title to come",
+        title: "Quantum Error Correction with Erasure Qubits",
         speaker: "Shruti Puri",
         affiliation: "Yale University",
         scholarUrl: "https://scholar.google.com/citations?user=q7U4bNoAAAAJ&hl=en",
