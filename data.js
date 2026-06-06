@@ -221,7 +221,7 @@ const SCHEDULE = [
         scholarUrl: "https://scholar.google.com/citations?user=IH9fJM0AAAAJ&hl=en",
         time: "14:30 – 18:00",
         type: "Lecture",
-        tags: ["To Be Determined"],
+        tags: ["Quantum Algorithm Applications"],
         materials: [
           { label: "Slides", type: "slides", url: null },
         ],
