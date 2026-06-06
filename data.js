@@ -215,7 +215,7 @@ const SCHEDULE = [
         ],
       },
       {
-        title: "Title to come",
+        title: "Quantum Algorithms for Link Invariants",
         speaker: "Konstantinos Meichanetzidis",
         affiliation: "Quantinuum",
         scholarUrl: "https://scholar.google.com/citations?user=IH9fJM0AAAAJ&hl=en",
@@ -235,10 +235,10 @@ const SCHEDULE = [
     date: "June 17, 2026",
     lectures: [
       {
-        title: "Application of Quantum Error Correction and Fault-Tolerance in Quantum Metrology",
-        speaker: "Sisi Zhou",
-        affiliation: "Perimeter Institute",
-        scholarUrl: "https://scholar.google.com/citations?user=i-m2j4oAAAAJ&hl=en",
+        title: "Quantum Error Correction with Erasure Qubits",
+        speaker: "Shruti Puri",
+        affiliation: "Yale University",
+        scholarUrl: "https://scholar.google.com/citations?user=q7U4bNoAAAAJ&hl=en",
         time: "09:00 – 12:30",
         type: "Lecture",
         tags: ["Quantum Error Handling"],
@@ -247,10 +247,10 @@ const SCHEDULE = [
         ],
       },
       {
-        title: "Quantum Error Correction with Erasure Qubits",
-        speaker: "Shruti Puri",
-        affiliation: "Yale University",
-        scholarUrl: "https://scholar.google.com/citations?user=q7U4bNoAAAAJ&hl=en",
+        title: "Application of Quantum Error Correction and Fault-Tolerance in Quantum Metrology",
+        speaker: "Sisi Zhou",
+        affiliation: "Perimeter Institute",
+        scholarUrl: "https://scholar.google.com/citations?user=i-m2j4oAAAAJ&hl=en",
         time: "14:30 – 18:00",
         type: "Lecture",
         tags: ["Quantum Error Handling"],
