@@ -59,7 +59,7 @@ const SCHEDULE = [
         type: "Hands-on",
         tags: ["Quantum Information", "Quantum Complexity"],
         materials: [
-          { label: "Notebook", type: "notes", url: null },
+          { label: "GitHub Classroom Assignment", type: "notes", url: null },
         ],
       },
       {
@@ -132,7 +132,7 @@ const SCHEDULE = [
         type: "Hands-on",
         tags: ["Quantum Algorithm Applications"],
         materials: [
-          { label: "Notebook", type: "notes", url: null },
+          { label: "GitHub Classroom Assignment", type: "notes", url: null },
         ],
       },
     ],
@@ -212,7 +212,7 @@ const SCHEDULE = [
         type: "Hands-on",
         tags: ["Quantum Computation"],
         materials: [
-          { label: "Notebook", type: "notes", url: null },
+          { label: "GitHub Classroom Assignment", type: "notes", url: null },
         ],
       },
       {
@@ -285,7 +285,7 @@ const SCHEDULE = [
         type: "Hands-on",
         tags: ["Quantum Error Handling"],
         materials: [
-          { label: "Notebook", type: "notes", url: null },
+          { label: "GitHub Classroom Assignment", type: "notes", url: null },
         ],
       },
       {
