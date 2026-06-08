@@ -26,8 +26,8 @@ const SCHEDULE = [
         type: "Lecture",
         tags: ["Quantum Information", "Quantum Complexity"],
         materials: [
-          { label: "Lecture 1 Slides", type: "slides", url: "slides/adam/introduction-to-fault-tolerant-quantum-computing.pdf" },
-          { label: "Lecture 2 Slides", type: "slides", url: "slides/adam/hamiltonians-and-local-games.pdf" },
+          { label: "Lecture 1 Slides", type: "slides", url: "slides/adam-bene-watts/introduction-to-fault-tolerant-quantum-computing.pdf" },
+          { label: "Lecture 2 Slides", type: "slides", url: "slides/adam-bene-watts/hamiltonians-and-local-games.pdf" },
         ],
       },
       {
@@ -39,7 +39,7 @@ const SCHEDULE = [
         type: "Lecture",
         tags: ["Quantum Information", "Quantum Complexity"],
         materials: [
-          { label: "Slides", type: "slides", url: null },
+          { label: "Slides", type: "slides", url: "slides/arthur-mehta/quantum-complexity.pdf" },
         ],
       },
     ],
