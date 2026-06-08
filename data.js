@@ -26,7 +26,8 @@ const SCHEDULE = [
         type: "Lecture",
         tags: ["Quantum Information", "Quantum Complexity"],
         materials: [
-          { label: "Slides", type: "slides", url: null },
+          { label: "Lecture 1 Slides", type: "slides", url: "slides/adam/Lecture_1.pdf" },
+          { label: "Lecture 2 Slides", type: "slides", url: "slides/adam/Lecture_2.pdf" },
         ],
       },
       {
