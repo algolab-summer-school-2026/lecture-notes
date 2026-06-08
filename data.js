@@ -26,8 +26,8 @@ const SCHEDULE = [
         type: "Lecture",
         tags: ["Quantum Information", "Quantum Complexity"],
         materials: [
-          { label: "Lecture 1 Slides", type: "slides", url: "slides/adam/Lecture_1.pdf" },
-          { label: "Lecture 2 Slides", type: "slides", url: "slides/adam/Lecture_2.pdf" },
+          { label: "Lecture 1 Slides", type: "slides", url: "slides/adam/introduction-to-fault-tolerant-quantum-computing.pdf" },
+          { label: "Lecture 2 Slides", type: "slides", url: "slides/adam/hamiltonians-and-local-games.pdf" },
         ],
       },
       {
