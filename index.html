@@ -463,6 +463,15 @@
     .btn-video:hover {
       background: rgba(185, 28, 28, 0.11);
     }
+    .btn-url {
+      background: rgba(37, 99, 235, 0.07);
+      border-color: rgba(37, 99, 235, 0.22);
+      color: #3b82f6;
+    }
+    .btn-url:hover {
+      background: rgba(37, 99, 235, 0.13);
+      border-color: rgba(37, 99, 235, 0.38);
+    }
     .btn-na {
       background: transparent;
       border-color: var(--border);
@@ -676,11 +685,14 @@
     const cls = mat.type === 'slides' ? 'btn-slides'
               : mat.type === 'notes'  ? 'btn-notes'
               : mat.type === 'video'  ? 'btn-video'
+              : mat.type === 'url'    ? 'btn-url'
               : 'btn-slides';
     const icon = mat.type === 'slides'
       ? `<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8 21 12 17 16 21"/></svg>`
       : mat.type === 'notes'
       ? `<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>`
+      : mat.type === 'url'
+      ? `<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>`
       : `<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>`;
     return `<a class="btn ${cls}" href="${mat.url}" target="_blank" rel="noopener">${icon} ${mat.label}</a>`;
   }

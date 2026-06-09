@@ -59,7 +59,7 @@ const SCHEDULE = [
         type: "Hands-on",
         tags: ["Quantum Information", "Quantum Complexity"],
         materials: [
-          { label: "GitHub Classroom Assignment", type: "notes", url: "https://classroom.github.com/assignment-invitations/a87dec85ea2694a5dcf495fd2d4e3db8" },
+          { label: "GitHub Classroom Assignment", type: "url", url: "https://classroom.github.com/assignment-invitations/a87dec85ea2694a5dcf495fd2d4e3db8" },
         ],
       },
       {
