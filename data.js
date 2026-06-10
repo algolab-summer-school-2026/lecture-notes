@@ -88,7 +88,7 @@ const SCHEDULE = [
         type: "Lecture",
         tags: ["Quantum Algorithm Applications"],
         materials: [
-          { label: "Lecture Notes", type: "slides", url: null },
+          { label: "Lecture Notes", type: "slides", url: "slides/roeland-wiersema/variational-quantum-algorithms.pdf" },
         ],
       },
       {
