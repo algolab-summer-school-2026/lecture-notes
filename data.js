@@ -144,13 +144,15 @@ const SCHEDULE = [
     date: "June 12, 2026",
     lectures: [
       {
-        title: "Sponsored Session",
-        speaker: "Industry Speakers",
-        affiliation: "",
+        title: "Sponsored Session : Using Logical Qubits to Solve Differential Equations",
+        speaker: "Industry Speaker",
+        affiliation: "Pasqal",
         scholarUrl: null,
-        time: "09:00 – 09:45",
+        time: "09:00 – 10:00",
         type: "Sponsored",
-        materials: [],
+        materials: [
+          { label: "Related paper", type: "url", url: "https://arxiv.org/abs/2605.21276" },
+        ],
       },
       {
         title: "Revision Session",
@@ -204,27 +206,27 @@ const SCHEDULE = [
     date: "June 16, 2026",
     lectures: [
       {
-        title: "Resource Estimation for the Hubbard Model",
-        speaker: "AlgoLab Team",
-        affiliation: "Université de Sherbrooke",
-        scholarUrl: null,
-        time: "09:00 – 12:30",
-        type: "Hands-on",
-        tags: ["Quantum Computation"],
-        materials: [
-          { label: "GitHub Classroom Assignment", type: "notes", url: null },
-        ],
-      },
-      {
         title: "Quantum Algorithms for Link Invariants",
         speaker: "Konstantinos Meichanetzidis",
         affiliation: "Quantinuum",
         scholarUrl: "https://scholar.google.com/citations?user=IH9fJM0AAAAJ&hl=en",
-        time: "14:30 – 18:00",
+        time: "09:00 – 12:30",
         type: "Lecture",
         tags: ["Quantum Algorithm Applications"],
         materials: [
           { label: "Slides", type: "slides", url: null },
+        ],
+      },
+      {
+        title: "Resource Estimation for the Hubbard Model",
+        speaker: "AlgoLab Team",
+        affiliation: "Université de Sherbrooke",
+        scholarUrl: null,
+        time: "14:30 – 18:00",
+        type: "Hands-on",
+        tags: ["Quantum Computation"],
+        materials: [
+          { label: "GitHub Classroom Assignment", type: "notes", url: null },
         ],
       },
     ],
