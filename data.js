@@ -120,7 +120,7 @@ const SCHEDULE = [
         type: "Lecture",
         tags: ["Quantum Algorithm Applications"],
         materials: [
-          { label: "Slides", type: "slides", url: null },
+          { label: "Slides", type: "slides", url: "slides/ulrike-stege/solving-combinatorial-optimization-problems-using-qaoa.pdf" },
         ],
       },
       {
