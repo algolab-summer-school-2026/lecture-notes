@@ -132,7 +132,7 @@ const SCHEDULE = [
         type: "Hands-on",
         tags: ["Quantum Algorithm Applications"],
         materials: [
-          { label: "GitHub Classroom Assignment", type: "notes", url: null },
+          { label: "GitHub Classroom Assignment", type: "url", url: "https://classroom.github.com/a/1ypQTyHY" },
         ],
       },
     ],
