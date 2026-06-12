@@ -145,9 +145,9 @@ const SCHEDULE = [
     lectures: [
       {
         title: "Sponsored Session : Using Logical Qubits to Solve Differential Equations",
-        speaker: "Industry Speaker",
+        speaker: "Evan Philip",
         affiliation: "Pasqal",
-        scholarUrl: null,
+        scholarUrl: "https://scholar.google.com/citations?user=c-eOH-QAAAAJ&hl=en",
         time: "09:00 – 10:00",
         type: "Sponsored",
         materials: [
