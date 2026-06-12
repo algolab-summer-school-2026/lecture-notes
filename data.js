@@ -151,7 +151,9 @@ const SCHEDULE = [
         time: "09:00 – 10:00",
         type: "Sponsored",
         materials: [
+          { label: "Slides", type: "slides", url: "slides/pasqal/using-logical-qubits-to-solve-differential-equations.pdf" },
           { label: "Related paper", type: "url", url: "https://arxiv.org/abs/2605.21276" },
+
         ],
       },
       {
