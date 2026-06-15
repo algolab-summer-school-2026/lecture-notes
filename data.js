@@ -101,7 +101,7 @@ const SCHEDULE = [
         tags: ["Quantum Algorithm Applications"],
         materials: [
           { label: "Lecture Notes", type: "slides", url: "slides/abhijeet-alase/qsvt-manuscript-notes.pdf" },
-          { label: "Additional Slides", type: "slides", url: "slides/abhijeet-alase/qsvt-and-its-applications.pdf" },
+          { label: "Related Slides", type: "slides", url: "slides/abhijeet-alase/qsvt-and-its-applications.pdf" },
         ],
       },
     ],
