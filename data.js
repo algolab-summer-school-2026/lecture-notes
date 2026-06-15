@@ -185,7 +185,7 @@ const SCHEDULE = [
         type: "Lecture",
         tags: ["Quantum Computation"],
         materials: [
-          { label: "Slides", type: "slides", url: "slides/intro-to-the-many-body-problem-vs-quantum-computing.pdf" },
+          { label: "Slides", type: "slides", url: "slides/chloe-aminata-gauvin-ndiaye/intro-to-many-body-problem-vs-quantum-computing.pdf" },
         ],
       },
       {
@@ -197,7 +197,8 @@ const SCHEDULE = [
         type: "Lecture",
         tags: ["Quantum Computation"],
         materials: [
-          { label: "Slides", type: "slides", url: null },
+          { label: "Slides - Part 1", type: "slides", url: "slides/olivia-dimatteo/qc-overview-lecture-I.pdf" },
+          { label: "Slides - Part 2", type: "slides", url: "slides/olivia-dimatteo/qc-overview-lecture-II.pdf" },
         ],
       },
     ],
