@@ -184,7 +184,7 @@ const SCHEDULE = [
         type: "Lecture",
         tags: ["Quantum Computation"],
         materials: [
-          { label: "Slides", type: "slides", url: null },
+          { label: "Slides", type: "slides", url: "slides/intro-to-the-many-body-problem-vs-quantum-computing.pdf" },
         ],
       },
       {
