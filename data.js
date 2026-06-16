@@ -26,8 +26,8 @@ const SCHEDULE = [
         type: "Lecture",
         tags: ["Quantum Information", "Quantum Complexity"],
         materials: [
-          { label: "Lecture 1 Slides", type: "slides", url: "slides/adam-bene-watts/introduction-to-fault-tolerant-quantum-computing.pdf" },
-          { label: "Lecture 2 Slides", type: "slides", url: "slides/adam-bene-watts/hamiltonians-and-local-games.pdf" },
+          { label: "Slides - Part 1", type: "slides", url: "slides/adam-bene-watts/introduction-to-fault-tolerant-quantum-computing.pdf" },
+          { label: "Slides - Part 2", type: "slides", url: "slides/adam-bene-watts/hamiltonians-and-local-games.pdf" },
         ],
       },
       {
@@ -197,8 +197,8 @@ const SCHEDULE = [
         type: "Lecture",
         tags: ["Quantum Computation"],
         materials: [
-          { label: "Slides - Part 1", type: "slides", url: "slides/olivia-dimatteo/qc-overview-lecture-I.pdf" },
-          { label: "Slides - Part 2", type: "slides", url: "slides/olivia-dimatteo/qc-overview-lecture-II.pdf" },
+          { label: "Slides - Part 1", type: "slides", url: "slides/olivia-di-matteo/quantum-computation-overview-annotated.pdf" },
+          { label: "Slides - Part 2", type: "slides", url: "slides/olivia-di-matteo/ftqc-resource-estimation-annotated.pdf" },
         ],
       },
     ],
