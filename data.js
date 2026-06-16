@@ -218,7 +218,7 @@ const SCHEDULE = [
         type: "Lecture",
         tags: ["Quantum Algorithm Applications"],
         materials: [
-          { label: "Slides", type: "slides", url: null },
+          { label: "Slides", type: "slides", url: "slides/konstantinos-meichanetzidis/quantum-algorithms-for-link-invariants.pdf" },
         ],
       },
       {
