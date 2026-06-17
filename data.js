@@ -262,7 +262,7 @@ const SCHEDULE = [
         type: "Lecture",
         tags: ["Quantum Error Handling"],
         materials: [
-          { label: "Slides", type: "slides", url: null },
+          { label: "Slides", type: "slides", url: "slides/sisi-zhou/application-of-quantum-error-correction-and-fault-tolerance-in-quantum-metrology.pdf" },
         ],
       },
       {
