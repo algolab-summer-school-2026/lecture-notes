@@ -318,7 +318,9 @@ const SCHEDULE = [
         scholarUrl: null,
         time: "09:00 – 12:30",
         type: "Exam",
-        materials: [],
+        materials: [
+          { label: "Exam", type: "notes", url: "slides/exam/exam.pdf" },
+        ],
       },
       {
         title: "Concluding Remarks",
